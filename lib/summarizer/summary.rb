@@ -9,7 +9,7 @@ module Summarizer
       @content_pages = document.pages
     end
 
-    def redact
+    def summarize
       content_pages.filter_map do |page|
         text = "#{page}\n tl;dr:"
         response = openai.completions_text(prompt: text, temperature: 0.3).first

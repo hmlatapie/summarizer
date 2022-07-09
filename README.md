@@ -1,8 +1,6 @@
 # Summarizer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/summarizer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Sumarize online pdf documents using GPT-3 model from the openai api.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Before you can use the gem, you need to export the `OPENAI_ACCESS_TOKEN` environment variable. The access token is available on the [OpenAI API page](https://openai.com/api/).
+
+```bash
+export OPENAI_ACCESS_TOKEN=<your-access-token>
+```
+
+Then you can use the gem:
+
+```ruby
+  Summarizer.summarize('https://www.example.com/some-pdf-document.pdf')
+```
 
 ## Development
 

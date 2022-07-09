@@ -18,6 +18,6 @@ module Summarizer
     puts "Loading document..."
     doc = Document.new(url)
     puts "Document has #{doc.words_count} words."
-    Summary.new(doc).redact
+    Summary.new(doc).summarize
   end
 end
