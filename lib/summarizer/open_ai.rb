@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Summarizer
+  # OpenAI adapter
   class OpenAI
     attr_reader :engine
 
@@ -20,3 +23,4 @@ module Summarizer
 
     attr_reader :access_token, :client
   end
+end

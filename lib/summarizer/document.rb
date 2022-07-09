@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module Summarizer
+  # Remote document reader
   class Document
     attr_reader :url
+
     def initialize(url)
       @url = url
     end
@@ -20,7 +22,7 @@ module Summarizer
     def download_content
       PDF::Reader.new(tempfile.path).pages.map(&:text)
     end
-    
+
     def tempfile
       @tempfile ||= Down.download(url)
     end

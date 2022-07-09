@@ -4,10 +4,10 @@ module Summarizer
   # Basic json ruby client
   class Client
     attr_reader :base_url
-    
-    def initialize(base_url, access_token: nil) 
+
+    def initialize(base_url, access_token: nil)
       @base_url = base_url
-      @access_token = access_token 
+      @access_token = access_token
     end
 
     def post(path, body)

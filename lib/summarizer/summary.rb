@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 module Summarizer
+  # Interface for summarization with OpenAI
   class Summary
     attr_reader :content_pages
-  
+
     def initialize(document)
       @content_pages = document.pages
     end

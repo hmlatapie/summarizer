@@ -10,6 +10,7 @@ require_relative "summarizer/open_ai"
 require_relative "summarizer/document"
 require_relative "summarizer/summary"
 
+# Summarizer main module
 module Summarizer
   class Error < StandardError; end
 
