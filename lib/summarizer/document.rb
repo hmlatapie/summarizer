@@ -5,16 +5,17 @@ module Summarizer
   class Document
     attr_reader :url
 
-    def initialize(url)
+    def initialize(url, tempfile: nil)
       @url = url
+      @tempfile = tempfile
     end
 
     def pages
-      @pages ||= download_content.gsub(/\n+/, "\n").gsub(/\s+/, " ")
+      @pages ||= download_content.map { |page| page.gsub(/\n+/, "\n").gsub(/\s+/, " ") }
     end
 
     def words_count
-      @words_count ||= pages.split(/\s+/).count
+      @words_count ||= pages.join(" ").split(/\s+/).count
     end
 
     private

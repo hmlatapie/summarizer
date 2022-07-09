@@ -15,7 +15,9 @@ module Summarizer
   class Error < StandardError; end
 
   def self.summarize(url)
+    puts "Loading document..."
     doc = Document.new(url)
+    puts "Document has #{doc.words_count} words."
     Summary.new(doc).redact
   end
 end

@@ -10,7 +10,7 @@ module Summarizer
     end
 
     def redact
-      pages.filter_map do |page|
+      content_pages.filter_map do |page|
         text = "#{page}\n tl;dr:"
         response = openai.completions_text(prompt: text, temperature: 0.3).first
         response if !response.nil? && !response.empty?

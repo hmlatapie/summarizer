@@ -12,7 +12,7 @@ module Summarizer
     end
 
     def completions(**args)
-      client.post("v1/completions", args)
+      client.post("v1/engines/#{engine}/completions", args)
     end
 
     def completions_text(**args)
