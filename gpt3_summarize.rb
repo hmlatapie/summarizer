@@ -25,11 +25,19 @@ puts filename_summary
 #download file from url
 `wget -U NoSuchBrowser/1.0 #{url}`
 
-#raise assertion if filename_summary exits
-raise "Summary file already exists" if File.exist?(filename_summary)
+if File.exist?(filename_summary)
+  #print file filename_summary to stdout
+  File.open(filename_summary, "r") do |f|
+    f.each_line do |line|
+      puts line
+      end
+    end
+    puts "Summary file already exists"
+    exit
+end
 
 # get first parameter and pass it to the summarize method
-summary = Summarizer.summarize(ARGV[0])
+summary = Summarizer.summarize(url)
 
 #print summary 
 puts summary
