@@ -5,7 +5,7 @@ module Summarizer
   class OpenAI
     attr_reader :engine
 
-    def initialize(engine: "text-babbage-001", access_token: nil)
+    def initialize(engine: "text-davinci-002", access_token: nil)
       @engine = engine
       @access_token = access_token || ENV.fetch("OPENAI_ACCESS_TOKEN")
       @client = Client.new("https://api.openai.com/", access_token: @access_token)

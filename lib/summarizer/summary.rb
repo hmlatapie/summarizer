@@ -12,7 +12,7 @@ module Summarizer
     def summarize
       content_pages.filter_map do |page|
         text = "#{page}\n tl;dr:"
-        response = openai.completions_text(prompt: text, temperature: 0.3).first
+        response = openai.completions_text(prompt: text, temperature: 0.3, max_tokens:200).first
         response if !response.nil? && !response.empty?
       end.join("\n")
     end
