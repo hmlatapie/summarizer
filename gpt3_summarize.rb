@@ -25,6 +25,9 @@ puts filename_summary
 #download file from url
 `wget -U NoSuchBrowser/1.0 #{url}`
 
+#raise assertion if filename_summary exits
+raise "Summary file already exists" if File.exist?(filename_summary)
+
 # get first parameter and pass it to the summarize method
 summary = Summarizer.summarize(ARGV[0])
 
